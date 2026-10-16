@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import { FORM_DESCRIPTION, FORM_FIELDS } from "./formConfig";
+import { isCorporateEmail } from "./lib/emailValidation";
 import { createSubmission } from "./lib/offlineQueue";
 import { syncPendingSubmissions } from "./lib/sync";
 import type { FormFieldConfig, FormValues } from "./types";
@@ -27,6 +28,7 @@ const validate = (values: FormValues): FormErrors => {
     if (field.type === "email" && typeof value === "string" && value.trim() !== "") {
       const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
       if (!validEmail) errors[field.name] = "Ingresa un correo válido.";
+      else if (!isCorporateEmail(value)) errors[field.name] = "Ingresa un correo corporativo.";
     }
   }
 

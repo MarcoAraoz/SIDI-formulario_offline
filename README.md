@@ -18,6 +18,8 @@ VITE_HUBSPOT_FORM_ID=a2964f29-32d5-4612-9507-1302147f047e
 - `email`: Correo corporativo
 - `hs_whatsapp_phone_number`: Numero de WhatsApp
 
+El campo `email` valida formato y bloquea dominios personales comunes para aceptar solo correos corporativos. La lista se puede ampliar en `src/lib/emailValidation.ts`.
+
 ## Desarrollo
 
 ```bash
