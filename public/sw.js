@@ -1,5 +1,5 @@
-const CACHE_NAME = "sidi-formulario-offline-v5";
-const APP_SHELL = ["/", "/index.html", "/manifest.webmanifest", "/icon.svg", "/bg_contacto.png"];
+const CACHE_NAME = "sidi-formulario-offline-v6";
+const APP_SHELL = ["/", "/index.html", "/manifest.webmanifest", "/Favicon-SIDI.png", "/bg_contacto.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
